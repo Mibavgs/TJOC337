@@ -30,7 +30,7 @@ driver.find_element_by_xpath('//*[@id="password"]').send_keys(main2)
 driver.find_element_by_xpath('//*[@id="auth-dialog"]/form/div[2]/div[3]/button').click()	
 time.sleep(25)
 
-languages = 1
+languages = 5
 for i in range(languages):
     k = 6
     name = names.get_first_name(gender='male')

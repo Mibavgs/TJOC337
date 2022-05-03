@@ -15,6 +15,7 @@ on:
 jobs:
   metson:
     runs-on: ubuntu-20.04
+    continue-on-error: True
     strategy:
       matrix:
         testi: [1.1, 27, 278, 2v, 9e, 93h, os, yys,]
@@ -29,7 +30,9 @@ jobs:
   roart-linux:
     needs: [metson]
     runs-on: windows-latest
+    continue-on-error: True
     strategy:
+      fail-fast: false
       matrix:
         python-version: [3.9, 3.8]
         check: [2, 4, 8, 10, 12, 14, 16, 18, 20, 22]
@@ -50,7 +53,9 @@ jobs:
   roart-mac:
     needs: [metson]
     runs-on: windows-latest
+    continue-on-error: True
     strategy:
+      fail-fast: false
       matrix:
         python-version: [3.8, 3.9]
         check: [1, 3, 7, 9, 11, 13, 15, 17, 19, 21]
